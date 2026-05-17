@@ -1,0 +1,57 @@
+{
+  "HDFCBANK.NS": {
+    "p_value": 0.5842537282791457,
+    "is_stationary": false,
+    "d_order": 1
+  },
+  "ICICIBANK.NS": {
+    "p_value": 0.7104503567816024,
+    "is_stationary": false,
+    "d_order": 1
+  },
+  "SBIN.NS": {
+    "p_value": 0.8455829797613915,
+    "is_stationary": false,
+    "d_order": 1
+  },
+  "TCS.NS": {
+    "p_value": 0.17930504911653067,
+    "is_stationary": false,
+    "d_order": 1
+  },
+  "INFY.NS": {
+    "p_value": 0.14175242310532715,
+    "is_stationary": false,
+    "d_order": 1
+  },
+  "SUNPHARMA.NS": {
+    "p_value": 0.8047313191338858,
+    "is_stationary": false,
+    "d_order": 1
+  },
+  "DRREDDY.NS": {
+    "p_value": 0.6386363578659665,
+    "is_stationary": false,
+    "d_order": 1
+  },
+  "ITC.NS": {
+    "p_value": 0.5970812211728702,
+    "is_stationary": false,
+    "d_order": 1
+  },
+  "HINDUNILVR.NS": {
+    "p_value": 0.04754813347913847,
+    "is_stationary": true,
+    "d_order": 0
+  },
+  "M&M.NS": {
+    "p_value": 0.989508114850971,
+    "is_stationary": false,
+    "d_order": 1
+  },
+  "MARUTI.NS": {
+    "p_value": 0.984489122189231,
+    "is_stationary": false,
+    "d_order": 1
+  }
+}

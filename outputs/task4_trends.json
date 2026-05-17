@@ -1,0 +1,46 @@
+{
+  "HDFCBANK.NS": {
+    "direction": "UPWARD",
+    "trend_slope_pct": 2.49
+  },
+  "ICICIBANK.NS": {
+    "direction": "DOWNWARD",
+    "trend_slope_pct": -2.89
+  },
+  "SBIN.NS": {
+    "direction": "UPWARD",
+    "trend_slope_pct": 15.76
+  },
+  "TCS.NS": {
+    "direction": "UPWARD",
+    "trend_slope_pct": 4.05
+  },
+  "INFY.NS": {
+    "direction": "UPWARD",
+    "trend_slope_pct": 7.98
+  },
+  "SUNPHARMA.NS": {
+    "direction": "UPWARD",
+    "trend_slope_pct": 6.48
+  },
+  "DRREDDY.NS": {
+    "direction": "SIDEWAYS",
+    "trend_slope_pct": -1.88
+  },
+  "ITC.NS": {
+    "direction": "SIDEWAYS",
+    "trend_slope_pct": -1.56
+  },
+  "HINDUNILVR.NS": {
+    "direction": "DOWNWARD",
+    "trend_slope_pct": -4.33
+  },
+  "M&M.NS": {
+    "direction": "UPWARD",
+    "trend_slope_pct": 9.25
+  },
+  "MARUTI.NS": {
+    "direction": "UPWARD",
+    "trend_slope_pct": 9.08
+  }
+}

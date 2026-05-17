@@ -1,0 +1,193 @@
+{
+  "methodology": {
+    "step_1": "Identified 25 candidate stocks across 5 sectors (Banking, IT, Pharma, FMCG, Auto)",
+    "step_2": "Computed three quantitative criteria for each: (1) 30-day rolling std dev of log returns, (2) STL trend strength and slope, (3) 6-month sector momentum",
+    "step_3": "Selected 2-3 stocks per sector based on: interesting volatility profiles, strong trend components, positive/mean-reverting momentum, and high liquidity",
+    "step_4": "Final universe of 11 stocks ensures diversification across uncorrelated sectors"
+  },
+  "sector_momentum_ranking": {
+    "Auto": 25.61,
+    "Banking": 3.02,
+    "FMCG": 1.68,
+    "Pharma": -1.63,
+    "IT": -1.78
+  },
+  "selections": {
+    "SBIN.NS": {
+      "sector": "Banking",
+      "reasons": [
+        "Higher-than-median volatility (0.01542, 72th percentile) - interesting for active trading",
+        "Strong trend component (strength=0.9869, slope=+15.76% - upward)",
+        "Positive 6-month momentum (+18.66%)",
+        "High liquidity (avg daily volume: 18,987,733)"
+      ],
+      "metrics": {
+        "avg_30d_volatility": 0.01542,
+        "trend_strength": 0.9869,
+        "trend_slope_pct": 15.76,
+        "momentum_6m_pct": 18.66,
+        "avg_daily_volume": 18987733
+      }
+    },
+    "HDFCBANK.NS": {
+      "sector": "Banking",
+      "reasons": [
+        "Lower volatility (0.01269, 20th percentile) - stabilizer for portfolio risk reduction",
+        "Strong trend component (strength=0.9401, slope=+2.49% - upward)",
+        "Neutral momentum (-0.74%)",
+        "High liquidity (avg daily volume: 24,999,043)"
+      ],
+      "metrics": {
+        "avg_30d_volatility": 0.01269,
+        "trend_strength": 0.9401,
+        "trend_slope_pct": 2.49,
+        "momentum_6m_pct": -0.74,
+        "avg_daily_volume": 24999043
+      }
+    },
+    "ICICIBANK.NS": {
+      "sector": "Banking",
+      "reasons": [
+        "Lower volatility (0.01293, 32th percentile) - stabilizer for portfolio risk reduction",
+        "Strong trend component (strength=0.9892, slope=-2.89% - downward)",
+        "Negative momentum (-6.43%) - mean-reversion opportunity",
+        "High liquidity (avg daily volume: 14,542,545)"
+      ],
+      "metrics": {
+        "avg_30d_volatility": 0.01293,
+        "trend_strength": 0.9892,
+        "trend_slope_pct": -2.89,
+        "momentum_6m_pct": -6.43,
+        "avg_daily_volume": 14542545
+      }
+    },
+    "INFY.NS": {
+      "sector": "IT",
+      "reasons": [
+        "Moderate volatility (0.01467, 60th percentile) - balanced risk-reward profile",
+        "Strong trend component (strength=0.8831, slope=+7.98% - upward)",
+        "Neutral momentum (+2.79%)",
+        "High liquidity (avg daily volume: 6,894,217)"
+      ],
+      "metrics": {
+        "avg_30d_volatility": 0.01467,
+        "trend_strength": 0.8831,
+        "trend_slope_pct": 7.98,
+        "momentum_6m_pct": 2.79,
+        "avg_daily_volume": 6894217
+      }
+    },
+    "TCS.NS": {
+      "sector": "IT",
+      "reasons": [
+        "Lower volatility (0.01278, 24th percentile) - stabilizer for portfolio risk reduction",
+        "Strong trend component (strength=0.9223, slope=+4.05% - upward)",
+        "Negative momentum (-5.55%) - mean-reversion opportunity",
+        "High liquidity (avg daily volume: 2,426,080)"
+      ],
+      "metrics": {
+        "avg_30d_volatility": 0.01278,
+        "trend_strength": 0.9223,
+        "trend_slope_pct": 4.05,
+        "momentum_6m_pct": -5.55,
+        "avg_daily_volume": 2426080
+      }
+    },
+    "SUNPHARMA.NS": {
+      "sector": "Pharma",
+      "reasons": [
+        "Lower volatility (0.01268, 16th percentile) - stabilizer for portfolio risk reduction",
+        "Strong trend component (strength=0.9871, slope=+6.48% - upward)",
+        "Neutral momentum (+2.99%)",
+        "High liquidity (avg daily volume: 3,133,667)"
+      ],
+      "metrics": {
+        "avg_30d_volatility": 0.01268,
+        "trend_strength": 0.9871,
+        "trend_slope_pct": 6.48,
+        "momentum_6m_pct": 2.99,
+        "avg_daily_volume": 3133667
+      }
+    },
+    "DRREDDY.NS": {
+      "sector": "Pharma",
+      "reasons": [
+        "Lower volatility (0.01339, 36th percentile) - stabilizer for portfolio risk reduction",
+        "Strong trend component (strength=0.9428, slope=-1.88% - downward)",
+        "Neutral momentum (-0.74%)",
+        "High liquidity (avg daily volume: 2,478,959)"
+      ],
+      "metrics": {
+        "avg_30d_volatility": 0.01339,
+        "trend_strength": 0.9428,
+        "trend_slope_pct": -1.88,
+        "momentum_6m_pct": -0.74,
+        "avg_daily_volume": 2478959
+      }
+    },
+    "HINDUNILVR.NS": {
+      "sector": "FMCG",
+      "reasons": [
+        "Lower volatility (0.01227, 8th percentile) - stabilizer for portfolio risk reduction",
+        "Strong trend component (strength=0.7389, slope=-4.33% - downward)",
+        "Neutral momentum (+0.59%)",
+        "High liquidity (avg daily volume: 1,730,669)"
+      ],
+      "metrics": {
+        "avg_30d_volatility": 0.01227,
+        "trend_strength": 0.7389,
+        "trend_slope_pct": -4.33,
+        "momentum_6m_pct": 0.59,
+        "avg_daily_volume": 1730669
+      }
+    },
+    "ITC.NS": {
+      "sector": "FMCG",
+      "reasons": [
+        "Lower volatility (0.01204, 4th percentile) - stabilizer for portfolio risk reduction",
+        "Strong trend component (strength=0.9897, slope=-1.56% - downward)",
+        "Neutral momentum (-3.81%)",
+        "High liquidity (avg daily volume: 17,990,719)"
+      ],
+      "metrics": {
+        "avg_30d_volatility": 0.01204,
+        "trend_strength": 0.9897,
+        "trend_slope_pct": -1.56,
+        "momentum_6m_pct": -3.81,
+        "avg_daily_volume": 17990719
+      }
+    },
+    "MARUTI.NS": {
+      "sector": "Auto",
+      "reasons": [
+        "Moderate volatility (0.01391, 40th percentile) - balanced risk-reward profile",
+        "Strong trend component (strength=0.9659, slope=+9.08% - upward)",
+        "Positive 6-month momentum (+35.70%)",
+        "High liquidity (avg daily volume: 592,139)"
+      ],
+      "metrics": {
+        "avg_30d_volatility": 0.01391,
+        "trend_strength": 0.9659,
+        "trend_slope_pct": 9.08,
+        "momentum_6m_pct": 35.7,
+        "avg_daily_volume": 592139
+      }
+    },
+    "M&M.NS": {
+      "sector": "Auto",
+      "reasons": [
+        "Higher-than-median volatility (0.01736, 96th percentile) - interesting for active trading",
+        "Strong trend component (strength=0.9880, slope=+9.25% - upward)",
+        "Positive 6-month momentum (+15.91%)",
+        "High liquidity (avg daily volume: 3,262,376)"
+      ],
+      "metrics": {
+        "avg_30d_volatility": 0.01736,
+        "trend_strength": 0.988,
+        "trend_slope_pct": 9.25,
+        "momentum_6m_pct": 15.91,
+        "avg_daily_volume": 3262376
+      }
+    }
+  }
+}

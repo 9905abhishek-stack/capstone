@@ -1,0 +1,274 @@
+{
+  "ARIMA": {
+    "HDFCBANK.NS": {
+      "MAPE (%)": 0.55,
+      "RMSE": 7.0015,
+      "MAE": 5.4374,
+      "Directional Accuracy (%)": 55.65
+    },
+    "ICICIBANK.NS": {
+      "MAPE (%)": 0.62,
+      "RMSE": 11.4415,
+      "MAE": 8.6277,
+      "Directional Accuracy (%)": 50.0
+    },
+    "SBIN.NS": {
+      "MAPE (%)": 0.64,
+      "RMSE": 7.5822,
+      "MAE": 5.7051,
+      "Directional Accuracy (%)": 50.0
+    },
+    "TCS.NS": {
+      "MAPE (%)": 0.82,
+      "RMSE": 33.7358,
+      "MAE": 24.9392,
+      "Directional Accuracy (%)": 50.0
+    },
+    "INFY.NS": {
+      "MAPE (%)": 1.01,
+      "RMSE": 20.3404,
+      "MAE": 15.2747,
+      "Directional Accuracy (%)": 48.39
+    },
+    "SUNPHARMA.NS": {
+      "MAPE (%)": 0.77,
+      "RMSE": 17.5884,
+      "MAE": 12.9242,
+      "Directional Accuracy (%)": 47.58
+    },
+    "DRREDDY.NS": {
+      "MAPE (%)": 0.84,
+      "RMSE": 14.4257,
+      "MAE": 10.5721,
+      "Directional Accuracy (%)": 54.84
+    },
+    "ITC.NS": {
+      "MAPE (%)": 0.58,
+      "RMSE": 2.8986,
+      "MAE": 2.3377,
+      "Directional Accuracy (%)": 54.03
+    },
+    "HINDUNILVR.NS": {
+      "MAPE (%)": 0.82,
+      "RMSE": 28.9713,
+      "MAE": 20.1859,
+      "Directional Accuracy (%)": 44.35
+    },
+    "M&M.NS": {
+      "MAPE (%)": 1.01,
+      "RMSE": 47.839,
+      "MAE": 35.0257,
+      "Directional Accuracy (%)": 51.61
+    },
+    "MARUTI.NS": {
+      "MAPE (%)": 0.84,
+      "RMSE": 179.3039,
+      "MAE": 124.5663,
+      "Directional Accuracy (%)": 50.0
+    }
+  },
+  "Prophet": {
+    "HDFCBANK.NS": {
+      "MAPE (%)": 3.72,
+      "RMSE": 42.3427,
+      "MAE": 36.6853,
+      "Directional Accuracy (%)": 52.42
+    },
+    "ICICIBANK.NS": {
+      "MAPE (%)": 9.51,
+      "RMSE": 146.9969,
+      "MAE": 131.2589,
+      "Directional Accuracy (%)": 52.42
+    },
+    "SBIN.NS": {
+      "MAPE (%)": 12.71,
+      "RMSE": 137.1116,
+      "MAE": 116.6179,
+      "Directional Accuracy (%)": 54.03
+    },
+    "TCS.NS": {
+      "MAPE (%)": 5.81,
+      "RMSE": 214.1615,
+      "MAE": 174.719,
+      "Directional Accuracy (%)": 50.0
+    },
+    "INFY.NS": {
+      "MAPE (%)": 9.37,
+      "RMSE": 153.4131,
+      "MAE": 138.8234,
+      "Directional Accuracy (%)": 58.87
+    },
+    "SUNPHARMA.NS": {
+      "MAPE (%)": 9.23,
+      "RMSE": 172.7947,
+      "MAE": 151.7338,
+      "Directional Accuracy (%)": 60.48
+    },
+    "DRREDDY.NS": {
+      "MAPE (%)": 2.73,
+      "RMSE": 41.5261,
+      "MAE": 34.464,
+      "Directional Accuracy (%)": 47.58
+    },
+    "ITC.NS": {
+      "MAPE (%)": 3.72,
+      "RMSE": 17.6118,
+      "MAE": 14.8324,
+      "Directional Accuracy (%)": 50.0
+    },
+    "HINDUNILVR.NS": {
+      "MAPE (%)": 3.51,
+      "RMSE": 105.627,
+      "MAE": 86.9968,
+      "Directional Accuracy (%)": 54.84
+    },
+    "M&M.NS": {
+      "MAPE (%)": 6.37,
+      "RMSE": 273.2151,
+      "MAE": 228.7139,
+      "Directional Accuracy (%)": 48.39
+    },
+    "MARUTI.NS": {
+      "MAPE (%)": 17.33,
+      "RMSE": 3223.0057,
+      "MAE": 2745.4043,
+      "Directional Accuracy (%)": 52.42
+    }
+  },
+  "LSTM": {
+    "HDFCBANK.NS": {
+      "MAPE (%)": 0.69,
+      "RMSE": 8.388,
+      "MAE": 6.865,
+      "Directional Accuracy (%)": 44.35
+    },
+    "ICICIBANK.NS": {
+      "MAPE (%)": 1.35,
+      "RMSE": 23.5828,
+      "MAE": 18.9415,
+      "Directional Accuracy (%)": 54.84
+    },
+    "SBIN.NS": {
+      "MAPE (%)": 1.0,
+      "RMSE": 10.8848,
+      "MAE": 8.7498,
+      "Directional Accuracy (%)": 50.81
+    },
+    "TCS.NS": {
+      "MAPE (%)": 1.02,
+      "RMSE": 40.4732,
+      "MAE": 31.0066,
+      "Directional Accuracy (%)": 50.81
+    },
+    "INFY.NS": {
+      "MAPE (%)": 1.3,
+      "RMSE": 24.5703,
+      "MAE": 19.5083,
+      "Directional Accuracy (%)": 53.23
+    },
+    "SUNPHARMA.NS": {
+      "MAPE (%)": 1.88,
+      "RMSE": 40.1153,
+      "MAE": 30.9557,
+      "Directional Accuracy (%)": 47.58
+    },
+    "DRREDDY.NS": {
+      "MAPE (%)": 1.44,
+      "RMSE": 22.1962,
+      "MAE": 18.1148,
+      "Directional Accuracy (%)": 48.39
+    },
+    "ITC.NS": {
+      "MAPE (%)": 0.89,
+      "RMSE": 4.5908,
+      "MAE": 3.5788,
+      "Directional Accuracy (%)": 45.97
+    },
+    "HINDUNILVR.NS": {
+      "MAPE (%)": 0.92,
+      "RMSE": 32.5409,
+      "MAE": 22.655,
+      "Directional Accuracy (%)": 49.19
+    },
+    "M&M.NS": {
+      "MAPE (%)": 2.87,
+      "RMSE": 123.1324,
+      "MAE": 101.1688,
+      "Directional Accuracy (%)": 37.1
+    },
+    "MARUTI.NS": {
+      "MAPE (%)": 1.91,
+      "RMSE": 355.4018,
+      "MAE": 287.0713,
+      "Directional Accuracy (%)": 45.16
+    }
+  },
+  "ExpSmoothing": {
+    "HDFCBANK.NS": {
+      "MAPE (%)": 2.47,
+      "RMSE": 29.573,
+      "MAE": 24.2,
+      "Directional Accuracy (%)": 46.77
+    },
+    "ICICIBANK.NS": {
+      "MAPE (%)": 6.43,
+      "RMSE": 104.7687,
+      "MAE": 88.6691,
+      "Directional Accuracy (%)": 45.16
+    },
+    "SBIN.NS": {
+      "MAPE (%)": 5.37,
+      "RMSE": 66.2202,
+      "MAE": 50.0474,
+      "Directional Accuracy (%)": 44.35
+    },
+    "TCS.NS": {
+      "MAPE (%)": 9.67,
+      "RMSE": 324.0092,
+      "MAE": 290.3603,
+      "Directional Accuracy (%)": 44.35
+    },
+    "INFY.NS": {
+      "MAPE (%)": 7.15,
+      "RMSE": 122.0505,
+      "MAE": 105.5492,
+      "Directional Accuracy (%)": 47.58
+    },
+    "SUNPHARMA.NS": {
+      "MAPE (%)": 3.49,
+      "RMSE": 73.1786,
+      "MAE": 56.9232,
+      "Directional Accuracy (%)": 57.26
+    },
+    "DRREDDY.NS": {
+      "MAPE (%)": 5.44,
+      "RMSE": 79.2979,
+      "MAE": 67.6131,
+      "Directional Accuracy (%)": 54.03
+    },
+    "ITC.NS": {
+      "MAPE (%)": 5.82,
+      "RMSE": 26.1495,
+      "MAE": 23.1398,
+      "Directional Accuracy (%)": 43.55
+    },
+    "HINDUNILVR.NS": {
+      "MAPE (%)": 5.54,
+      "RMSE": 171.3769,
+      "MAE": 139.8873,
+      "Directional Accuracy (%)": 51.61
+    },
+    "M&M.NS": {
+      "MAPE (%)": 5.29,
+      "RMSE": 225.2203,
+      "MAE": 189.6872,
+      "Directional Accuracy (%)": 50.0
+    },
+    "MARUTI.NS": {
+      "MAPE (%)": 14.84,
+      "RMSE": 2765.0194,
+      "MAE": 2353.2907,
+      "Directional Accuracy (%)": 54.84
+    }
+  }
+}

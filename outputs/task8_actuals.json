@@ -1,0 +1,22 @@
+{
+  "trading_window": {"day1": "2026-05-12", "day2": "2026-05-13"},
+  "invested_value": 989803.12,
+  "day1_portfolio_value": 973643.53,
+  "day1_return_pct": -1.62,
+  "day2_portfolio_value": 969134.34,
+  "day2_return_pct": -2.07,
+  "day2_total_loss": -20668.78,
+  "stocks": {
+    "SBIN.NS":       {"qty": 79,  "avg_price": 964.41, "day1_ltp": 961.70, "day2_ltp": 956.52, "day1_ret_pct": -0.28, "day2_ret_pct": -0.82},
+    "DRREDDY.NS":    {"qty": 64,  "avg_price": 1267.02, "day1_ltp": 1257.58, "day2_ltp": 1254.76, "day1_ret_pct": -0.75, "day2_ret_pct": -0.97},
+    "HDFCBANK.NS":   {"qty": 109, "avg_price": 745.88, "day1_ltp": 739.79, "day2_ltp": 743.37, "day1_ret_pct": -0.82, "day2_ret_pct": -0.34},
+    "HINDUNILVR.NS": {"qty": 35,  "avg_price": 2246.96, "day1_ltp": 2223.38, "day2_ltp": 2237.27, "day1_ret_pct": -1.05, "day2_ret_pct": -0.43},
+    "ITC.NS":        {"qty": 264, "avg_price": 302.94, "day1_ltp": 298.29, "day2_ltp": 302.30, "day1_ret_pct": -1.53, "day2_ret_pct": -0.21},
+    "SUNPHARMA.NS":  {"qty": 44,  "avg_price": 1864.93, "day1_ltp": 1834.73, "day2_ltp": 1810.54, "day1_ret_pct": -1.62, "day2_ret_pct": -2.92},
+    "INFY.NS":       {"qty": 64,  "avg_price": 1148.98, "day1_ltp": 1126.62, "day2_ltp": 1115.42, "day1_ret_pct": -1.95, "day2_ret_pct": -2.92},
+    "ICICIBANK.NS":  {"qty": 106, "avg_price": 1242.92, "day1_ltp": 1227.15, "day2_ltp": 1215.45, "day1_ret_pct": -1.27, "day2_ret_pct": -2.21},
+    "M&M.NS":        {"qty": 34,  "avg_price": 3219.41, "day1_ltp": 3154.30, "day2_ltp": 3091.93, "day1_ret_pct": -2.02, "day2_ret_pct": -3.96},
+    "MARUTI.NS":     {"qty": 9,   "avg_price": 13186.23, "day1_ltp": 12910.20, "day2_ltp": 12927.68, "day1_ret_pct": -2.09, "day2_ret_pct": -1.96},
+    "TCS.NS":        {"qty": 33,  "avg_price": 2337.20, "day1_ltp": 2261.28, "day2_ltp": 2234.92, "day1_ret_pct": -3.25, "day2_ret_pct": -4.38}
+  }
+}

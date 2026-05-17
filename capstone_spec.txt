@@ -1,0 +1,248 @@
+Time Series Analysis 2026
+Capstone 
+Project 
+2026
+IMPORTANT LINKS
+Capstone Submission Link:  Click Here
+VIRTUAL TRADING ON STOCKGRO (Details inside)
+1.Capstone Registration FORM:  Click Here
+2.Trading Platform link: Click Here
+Objective
+In this capstone project, you will apply time series forecasting and
+analysis techniques to select stocks and allocate capital within a
+virtual ₹10,00,000 portfolio on the StockGro platform. You will build
+predictive models (ARIMA, Prophet, LSTM, etc.) on historical NSE
+stock data, use those models to make informed investment
+decisions, execute those decisions on the StockGro virtual trading
+platform, and finally compare your model's predictions against the
+actual market outcomes observed on StockGro. The entire workflow
+— from data analysis to live virtual trading to final reporting —
+constitutes your submission.
+Platform Background
+StockGro is a virtual stock market simulator that uses live NSE/BSE
+data. It allows users to build portfolios, allocate funds, execute
+trades, and monitor real-time performance — all without any real
+financial risk. You will use StockGro as the execution environment
+to test whether your data-driven forecasts translate into actual
+portfolio gains.
+Capstone Problem Statement
+Data-Driven Stock Analysis using Time Series Models on StockGro
+Dataset Specification
+Source: Yahoo Finance via the yfinance Python library
+Period: 1st January 2021 to 31st December 2025
+Interval: Daily (1d)
+Train/Test Split: Use a minimum of the last 6 months of this
+period (i.e., July 2025 – December 2025) as your test/validation
+set. Everything before that is your training data.
+Example code to fetch data:
+Step-by-Step Project Tasks
+Follow the tasks below in order. Each task builds on the previous one.
+Task 1: Stock Universe Selection
+What you must do:
+Choose stocks from diverse sectors (e.g., Banking, IT, Pharma,
+FMCG, Auto) to ensure portfolio diversification.
+Justify each stock selection using at least one of the following
+data-driven approaches:
+Rolling standard deviation to identify stocks with interesting
+volatility profiles
+Seasonal decomposition to detect stocks with strong trends
+Sector-based rationale (e.g., selecting from a high-
+momentum sector)
+Deliverable: A written justification for your chosen stock universe.
+Task 2: Data Preprocessing
+Before modeling, prepare your data so it is clean and suitable for
+time series analysis.
+What you must do:
+Handle missing values using forward fill, backward fill, or
+removal
+Test each stock's price series for stationarity using the
+Augmented Dickey-Fuller (ADF) test; apply differencing if the
+series is non-stationary
+Normalize or scale data if you plan to use ML-based models like
+LSTM
+Split the data into training (before July 2025) and testing (July
+2025 – December 2025) sets
+Deliverable: Clean, preprocessed time series datasets for each
+selected stock, ready for modeling.
+For each model:
+Train on the training set
+Validate on the test set (last 6 months)
+Forecast prices for the next 5 trading days
+Evaluate using MAPE, RMSE, and/or directional accuracy
+(did the model correctly predict whether the price goes up
+or down?)
+Tune ARIMA using AIC/BIC criteria and validate residuals
+Optionally, combine multiple model predictions into an
+ensemble for better accuracy
+Deliverable: Forecasted prices for each stock over the next 2 trading
+days, along with model evaluation metrics.
+Task 3: Time Series Forecasting
+Build forecasting models to predict stock prices for the next 2
+trading days beyond your dataset (i.e., into early January 2026, or
+equivalently, the 2 days of the StockGro trading window).
+What you must do:
+Implement at least one (preferably two or more) of the following
+models:
+ARIMA / SARIMA
+Exponential Smoothing (SES / Holt-Winters)
+Facebook Prophet
+LSTM / GRU
+CNN-based time series model
+Any transformer-based or pretrained model
+Deliverable: Volatility estimates and trend assessments for each
+stock in your universe, which will directly feed into your portfolio
+allocation strategy in the next task.
+Task 4:  Volatility and Trend Analysis
+Beyond just price forecasts, you must understand each stock's risk
+profile and trend behavior.
+What you must do:
+Volatility Estimation:
+Compute log returns for each stock
+Analyze fluctuations in log returns to estimate short-term risk
+Optionally use GARCH(1,1) or rolling standard deviation to
+model time-varying volatility and forecast near-term
+uncertainty
+Trend and Pattern Analysis:
+Apply seasonal decomposition (e.g., STL decomposition) to
+break each stock's price series into trend, seasonality, and
+residual/noise components
+Evaluate the strength and direction of the trend to understand
+whether a stock is in an upward, downward, or sideways phase
+Strategy D — Sector Momentum Rotation:
+Group your selected stocks by sector
+Assess which sectors are showing consistent upward momentum
+Allocate more capital to high-momentum sectors, and within each sector,
+use one of the above strategies to finalize individual stock weights
+Deliverable: A final portfolio allocation table showing: stock name, allocated
+amount (in ₹), weight (%), and the reasoning/strategy behind the allocation.
+Task 5: Portfolio Construction and Capital Allocation
+Using the outputs of Tasks 3 and 4, decide how to allocate your ₹10,00,000
+virtual capital across your selected stocks. You must use at least two of the
+following strategies:
+Strategy A — Forecast-Guided Allocation:
+Rank stocks by their predicted 5-day return from your forecasting models
+Allocate more capital to stocks with higher predicted gains and higher
+forecast confidence
+Optionally adjust weights based on model uncertainty or prediction
+intervals
+Strategy B — Volatility-Aware Sizing:
+Use predicted volatility (from GARCH or rolling std dev) to assign weights
+inversely proportional to volatility: wᵢ = (1/σ̂ ᵢ) / Σⱼ(1/σ̂ ⱼ)
+Stocks expected to be more volatile receive a smaller allocation; more stable
+stocks receive a larger share
+Normalize all weights to sum to 1
+Strategy C — Correlation-Based Diversification:
+Compute a correlation matrix across your selected stocks using recent
+return windows
+Prefer combinations of stocks that are lowly correlated with each other to
+reduce portfolio-level risk
+Avoid concentrating capital in highly correlated stocks
+Task 6: Model Comparison
+Compare all the forecasting models you built in Task 3.
+What you must do:
+Tabulate MAPE, RMSE, and directional accuracy for each model
+across all stocks
+Comment on each model's strengths and weaknesses (e.g.,
+ARIMA is interpretable but struggles with non-linearity; LSTM
+captures complex patterns but requires more data and tuning)
+Discuss whether an ensemble approach improved results
+State clearly which model(s) you ultimately relied on for your
+portfolio decisions and why
+Deliverable: A comparative model evaluation table and a written
+discussion.
+Task 7: Virtual Trading on StockGro
+This is where you execute your data-driven strategy in the real
+(virtual) market.
+Step-by-step instructions:
+1.Register for capstone ( Registration Link ) using the provided
+form to gain access to the Live Event.                                                                 
+2.Log in at : https://stockgro.onelink.me/vNON/21jikjek 
+Log in with your Registered mobile Number
+Go to Trackers in the app → find Event : “Portfolio - Time
+Series Analysis 2026”
+Make sure your StockGro app is updated, otherwise the
+Event Portfolio will not be visible
+3.Open the Event Portfolio and start building your portfolio
+4.Deploy your ₹10,00,000 by purchasing the stocks in the exact
+proportions determined in Task 5
+5.The trading window is open Monday to Friday, 11 May 2025 – 15
+May 2025 (market hours: 9:35 AM – 3:25 PM each day). Pick any
+two consecutive trading days within this window as your
+personal execution and observation window. Execute all your
+trades before the market close of your chosen Day 1, and record
+your portfolio performance at the market close of your chosen
+Day 2.
+Valid day pairs you can choose from:
+Day 1: Mon 11 May → Day 2: Tue 12 May
+Day 1: Tue 12 May → Day 2: Wed 13 May
+Day 1: Wed 13 May → Day 2: Thu 14 May
+Day 1: Thu 14 May → Day 2: Fri 15 May
+To confirm enrollment: if "Portfolio – Time Series Analysis 2026"
+appears in your Trackers, your registration is successful.
+Tutorial video: Click Here
+Task 8: Performance Tracking and Comparison Against
+Your Predictions
+This is the most critical task — comparing what your models
+predicted against what actually happened in the market.
+Throughout this task, "Day 1" and "Day 2" refer to whichever
+consecutive day pair you selected in Task 7.
+Step 1 — Record Actual Outcomes:
+At the market close of your Day 2 (3:25 PM), note the actual
+closing prices of all your selected stocks from the StockGro app
+Record your portfolio's total return, individual stock returns,
+and any volatility observed across the two days
+Step 2 — Compare Predictions vs Reality:
+For each stock, place your model's forecasted price for Day 1 and
+Day 2 alongside the actual prices observed on StockGro
+Compute the prediction error (MAPE or absolute % error) for
+this live two-day window
+Check directional accuracy: did your model correctly predict
+whether each stock went up or down?
+Step 3 — Portfolio Performance Analysis:
+Report your total portfolio return (%) over your chosen two-day
+window
+Identify which stocks contributed positively and which dragged
+performance
+Assess whether your chosen allocation strategy from Task 5 held
+up under actual market conditions
+Step 4 — Reflect:
+Did your model predictions align with actual market movement?
+Did higher-confidence stocks actually perform better?
+Was your volatility estimation accurate? Did volatile stocks
+behave as expected?
+What would you change in your model, preprocessing, or
+allocation strategy if you were to redo this?
+Deliverable: A structured comparison table (predicted vs actual
+prices and returns) and a written reflection.
+Final Submission Requirements : 
+Your submission must include all of the following:
+1. Python Notebook(s) (.ipynb):
+Full pipeline: data fetching → preprocessing → modeling →
+forecasting → portfolio construction
+All code must be runnable and clearly commented
+Reference sample notebook provided:
+stock_price_prediction_using_yfinance[1].ipynb
+2. Report (maximum 10 pages):
+ Your report must cover the following sections in order:
+Methodology and models used
+Stock selection rationale (Task 1)
+Data preprocessing steps (Task 2)
+Forecast results with confidence intervals (Task 3)
+Volatility and trend analysis findings (Task 4)
+Portfolio composition and allocation rationale (Task 5)
+Model comparison and accuracy evaluation (Task 6)
+StockGro execution summary — trades placed, capital deployed
+(Task 7)
+Predicted vs actual outcomes — this is the core of your report
+(Task 8)
+Reflections: what worked, what didn't, and what you would
+improve
+3. Optional Bonus — Visual Dashboard: 
+Build an interactive or static dashboard that includes:
+Forecast plots: actual vs predicted prices for each stock
+Portfolio allocation chart (pie or bar chart by stock and sector)
+Correlation heatmap (if using diversification strategy)
+Trend and volatility graphs supporting your strategy rationale
+Submission Link:  Click Here
+All The Best
+~Team C&A

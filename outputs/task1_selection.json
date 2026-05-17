@@ -1,0 +1,45 @@
+{
+  "sectors": {
+    "Banking": [
+      "HDFCBANK.NS",
+      "ICICIBANK.NS",
+      "SBIN.NS"
+    ],
+    "IT": [
+      "TCS.NS",
+      "INFY.NS"
+    ],
+    "Pharma": [
+      "SUNPHARMA.NS",
+      "DRREDDY.NS"
+    ],
+    "FMCG": [
+      "ITC.NS",
+      "HINDUNILVR.NS"
+    ],
+    "Auto": [
+      "M&M.NS",
+      "MARUTI.NS"
+    ]
+  },
+  "ticker_sectors": {
+    "HDFCBANK.NS": "Banking",
+    "ICICIBANK.NS": "Banking",
+    "SBIN.NS": "Banking",
+    "TCS.NS": "IT",
+    "INFY.NS": "IT",
+    "SUNPHARMA.NS": "Pharma",
+    "DRREDDY.NS": "Pharma",
+    "ITC.NS": "FMCG",
+    "HINDUNILVR.NS": "FMCG",
+    "M&M.NS": "Auto",
+    "MARUTI.NS": "Auto"
+  },
+  "rationale": {
+    "Banking": "High-liquidity large-cap banks representing India's financial backbone. HDFC Bank & ICICI for private sector; SBI for PSU exposure.",
+    "IT": "TCS and Infosys \u2014 top IT exporters. IT sector shows strong seasonal patterns tied to global tech demand and USD/INR dynamics.",
+    "Pharma": "Sun Pharma and Dr. Reddy's \u2014 defensive sector with low correlation to cyclicals. Interesting volatility profiles during health events.",
+    "FMCG": "ITC and Hindustan Unilever \u2014 stable, low-volatility stocks for portfolio risk reduction. Strong trend components.",
+    "Auto": "Tata Motors and Maruti \u2014 cyclical sector with high momentum potential. EV transition creates interesting regime shifts."
+  }
+}

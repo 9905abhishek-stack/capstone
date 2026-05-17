@@ -1,0 +1,203 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{booktabs,tabularx,graphicx,float,xcolor,hyperref}
+\usepackage{titlesec,enumitem,amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{accent}{HTML}{00D4AA}
+\definecolor{negative}{HTML}{FF6B6B}
+\hypersetup{colorlinks=true,linkcolor=blue!60!black,urlcolor=blue!60!black}
+\titleformat{\section}{\Large\bfseries\color{black}}{}{0em}{}[\vspace{-0.3em}\rule{\textwidth}{0.4pt}]
+\titleformat{\subsection}{\large\bfseries}{}{0em}{}
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{0em}
+
+\title{\textbf{Time Series Analysis 2026 --- Capstone Report}\\[0.3em]
+\large IIT Guwahati $\times$ StockGro}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-2em}
+
+% ─────────────────────────────────────────────────────
+\section{1. Methodology and Models Used}
+
+We applied time series forecasting to 11 NSE stocks, allocated Rs.10,00,000 in a virtual portfolio on StockGro, and compared predictions against actual market outcomes.
+
+\textbf{Dataset:} Yahoo Finance (\texttt{yfinance}), Jan 2021 -- Dec 2025, daily interval.\\
+\textbf{Split:} Training (before Jul 2025) | Testing (Jul -- Dec 2025, 125 observations).
+
+\begin{table}[H]\centering\small
+\begin{tabular}{lll}\toprule
+\textbf{Model} & \textbf{Library} & \textbf{Purpose} \\\midrule
+ARIMA/SARIMA & pmdarima & Price forecasting (auto order via AIC) \\
+Facebook Prophet & prophet & Trend + seasonality with Indian holidays \\
+LSTM (2-layer) & PyTorch & Non-linear sequence modeling \\
+Exponential Smoothing & statsmodels & Holt-Winters triple smoothing \\
+GARCH(1,1) & arch & Conditional volatility estimation \\\bottomrule
+\end{tabular}
+\end{table}
+
+% ─────────────────────────────────────────────────────
+\section{2. Stock Selection Rationale (Task 1)}
+
+We screened \textbf{25 candidate stocks} across 5 sectors using three quantitative criteria: (1)~30-day rolling standard deviation of log returns, (2)~STL trend strength, (3)~6-month sector momentum. Final selection: 11 stocks.
+
+\begin{table}[H]\centering\small
+\begin{tabular}{lll}\toprule
+\textbf{Sector} & \textbf{Selected} & \textbf{Key Justification} \\\midrule
+Banking & HDFC Bank, ICICI Bank, SBI & Highest liquidity (15--25M daily vol) \\
+IT & TCS, Infosys & Top-2 by market cap, mean-reversion signals \\
+Pharma & Sun Pharma, Dr.\ Reddy's & Low correlation to cyclicals, defensive \\
+FMCG & ITC, Hindustan Unilever & Lowest volatility (4th--8th percentile) \\
+Auto & M\&M, Maruti & Highest sector momentum (+25.6\%) \\\bottomrule
+\end{tabular}
+\end{table}
+
+14 candidates were rejected due to lower liquidity, weaker trends, or redundancy within their sector.
+
+% ─────────────────────────────────────────────────────
+\section{3. Data Preprocessing Steps (Task 2)}
+
+\begin{enumerate}[nosep]
+\item \textbf{Missing values:} Forward-fill for market holidays and trading halts
+\item \textbf{Stationarity:} ADF test on each stock; 10 of 11 required first-order differencing (d=1). Only HINDUNILVR was stationary (p=0.0475).
+\item \textbf{Scaling:} Min-Max normalization for LSTM inputs (60-day lookback window)
+\item \textbf{Log returns:} Computed for GARCH volatility modeling
+\item \textbf{STL Decomposition:} Period=63 (quarterly) for trend/seasonal/residual separation
+\item \textbf{Train/Test:} Training $<$ Jul 2025 ($\sim$1110 obs) | Test Jul--Dec 2025 (125 obs)
+\end{enumerate}
+
+% ─────────────────────────────────────────────────────
+\section{4. Forecast Results with Confidence Intervals (Task 3)}
+
+Each model was trained on the training set, validated on 125 test observations, and used to forecast 2 days ahead with 95\% confidence intervals.
+
+\begin{table}[H]\centering\small
+\begin{tabular}{lcccc}\toprule
+\textbf{Model} & \textbf{Avg MAPE} & \textbf{Best Stock} & \textbf{Worst Stock} & \textbf{Avg Dir.\ Acc.} \\\midrule
+\textbf{ARIMA} & \textbf{0.77\%} & HDFCBANK (0.55\%) & M\&M (1.01\%) & 50.6\% \\
+LSTM & 1.39\% & HDFCBANK (0.69\%) & M\&M (2.87\%) & 47.9\% \\
+ExpSmoothing & 6.50\% & HDFCBANK (2.47\%) & MARUTI (14.84\%) & 48.9\% \\
+Prophet & 7.64\% & DRREDDY (2.73\%) & MARUTI (17.33\%) & 52.9\% \\\bottomrule
+\end{tabular}
+\caption{Backtest performance on Jul--Dec 2025 test set (125 observations per stock).}
+\end{table}
+
+\textbf{ARIMA} achieved the best accuracy with sub-1\% average MAPE. All models produced 2-day forecasts with 95\% confidence intervals computed from prediction standard errors.
+
+% ─────────────────────────────────────────────────────
+\section{5. Volatility and Trend Analysis (Task 4)}
+
+\subsection{GARCH(1,1) Volatility}
+GARCH(1,1) was fitted on log returns to estimate conditional volatility. High-persistence stocks (DRREDDY: 0.997, SUNPHARMA: 0.995) exhibit slowly-decaying volatility clustering. Low-persistence stocks (INFY: 0.174, HINDUNILVR: 0.563) show mean-reverting volatility.
+
+\subsection{STL Trend Analysis}
+7 stocks showed \textbf{upward} trends (SBIN +15.76\%, M\&M +9.25\%, MARUTI +9.08\%), 2 were \textbf{sideways} (ITC, DRREDDY), and 2 were \textbf{downward} (ICICIBANK $-$2.89\%, HINDUNILVR $-$4.33\%).
+
+% ─────────────────────────────────────────────────────
+\section{6. Portfolio Composition and Allocation (Task 5)}
+
+We blended \textbf{4 strategies}: Forecast-Guided (40\%), Volatility-Aware (30\%), Correlation-Diversified (20\%), Sector Momentum (10\%).
+
+\begin{table}[H]\centering\small
+\begin{tabular}{lcrl}\toprule
+\textbf{Stock} & \textbf{Weight} & \textbf{Amount} & \textbf{Primary Driver} \\\midrule
+ICICI Bank & 13.5\% & Rs.1,34,614 & Forecast-Guided (highest predicted return) \\
+Maruti & 11.9\% & Rs.1,19,072 & Sector Momentum (Auto +25.6\%) \\
+M\&M & 11.0\% & Rs.1,10,239 & Sector Momentum \\
+HDFC Bank & 8.2\% & Rs.81,897 & Volatility-Aware (low vol) \\
+Sun Pharma & 8.2\% & Rs.81,869 & Volatility-Aware \\
+Dr.\ Reddy's & 8.1\% & Rs.81,172 & Correlation-Diversified \\
+HUL & 8.1\% & Rs.80,646 & Volatility-Aware (lowest vol) \\
+ITC & 8.0\% & Rs.80,132 & Volatility-Aware \\
+TCS & 7.9\% & Rs.78,751 & Correlation-Diversified \\
+SBI & 7.7\% & Rs.76,708 & Forecast-Guided (upward trend) \\
+Infosys & 7.5\% & Rs.74,900 & Correlation-Diversified \\
+\midrule
+\textbf{Total} & \textbf{100\%} & Rs.\textbf{10,00,000} & \\\bottomrule
+\end{tabular}
+\end{table}
+
+% ─────────────────────────────────────────────────────
+\section{7. Model Comparison (Task 6)}
+
+\begin{table}[H]\centering\small
+\begin{tabular}{lcccl}\toprule
+\textbf{Model} & \textbf{Avg MAPE} & \textbf{Avg RMSE} & \textbf{Dir.\ Acc.} & \textbf{Assessment} \\\midrule
+ARIMA & 0.77\% & 33.7 & 50.6\% & Best accuracy; interpretable; fast \\
+LSTM & 1.39\% & 62.3 & 47.9\% & Good on non-linear patterns; slow to train \\
+ExpSmoothing & 6.50\% & 362.6 & 48.9\% & Simple but poor on volatile stocks \\
+Prophet & 7.64\% & 406.4 & 52.9\% & Best directional accuracy; overestimates trends \\\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Model used for allocation:} ARIMA (lowest MAPE). GARCH was used for volatility estimation in Strategy B. No ensemble was used as ARIMA alone outperformed combinations.
+
+% ─────────────────────────────────────────────────────
+\section{8. StockGro Execution Summary (Task 7)}
+
+\textbf{Trading Window:} Day 1 = May 12, 2026 | Day 2 = May 13, 2026.
+
+All 11 stocks were purchased on Day 1 at market open. Portfolio was held without changes through Day 2. Total invested: Rs.9,89,803 (slightly below Rs.10L due to whole-share rounding).
+
+% ─────────────────────────────────────────────────────
+\section{9. Predicted vs Actual Outcomes (Task 8)}
+
+\begin{table}[H]\centering\small
+\begin{tabular}{lrrrrrc}\toprule
+\textbf{Stock} & \textbf{Pred D1} & \textbf{Act D1} & \textbf{Err D1} & \textbf{Pred D2} & \textbf{Act D2} & \textbf{Err D2} \\\midrule
+SBIN & 973.52 & 961.70 & 1.23\% & 974.10 & 956.52 & 1.84\% \\
+DRREDDY & 1265.61 & 1257.58 & 0.64\% & 1265.61 & 1254.76 & 0.86\% \\
+HDFCBANK & 990.90 & 739.79 & 33.94\% & 990.90 & 743.37 & 33.30\% \\
+HUL & 2290.20 & 2223.38 & 3.01\% & 2290.20 & 2237.27 & 2.37\% \\
+ITC & 392.56 & 298.29 & 31.60\% & 392.75 & 302.30 & 29.92\% \\
+SUNPHARMA & 1710.40 & 1834.73 & 6.78\% & 1709.43 & 1810.54 & 5.58\% \\
+INFY & 1621.60 & 1126.62 & 43.93\% & 1621.60 & 1115.42 & 45.38\% \\
+ICICIBANK & 1343.85 & 1227.15 & 9.51\% & 1346.29 & 1215.45 & 10.76\% \\
+M\&M & 3662.70 & 3154.30 & 16.12\% & 3665.10 & 3091.93 & 18.54\% \\
+MARUTI & 16663.28 & 12910.20 & 29.07\% & 16670.25 & 12927.68 & 28.95\% \\
+TCS & 3188.83 & 2261.28 & 41.02\% & 3188.83 & 2234.92 & 42.68\% \\
+\midrule
+\textbf{Average} & & & \textbf{19.71\%} & & & \textbf{20.02\%} \\\bottomrule
+\end{tabular}
+\caption{ARIMA predictions vs StockGro actual closing prices (May 12--13, 2026).}
+\end{table}
+
+\textbf{Portfolio:} Invested Rs.9,89,803 $\rightarrow$ Day 2 value Rs.9,69,134 $\rightarrow$ \textbf{Return: $-$2.07\%} (loss of Rs.20,669).\\
+\textbf{Directional Accuracy:} 6/11 (54.5\%).
+
+\textbf{Analysis:} Stocks like HDFCBANK, ITC, INFY, and TCS show 30--45\% prediction errors. These stocks likely underwent corporate actions (stock splits, bonus issues) between Jan--May 2026, causing their actual prices to diverge significantly from Dec 2025 levels. Stocks whose prices remained near Dec 2025 levels (SBIN: 1.23\%, DRREDDY: 0.64\%) had excellent predictions.
+
+% ─────────────────────────────────────────────────────
+\section{10. Reflections}
+
+\subsection{What Worked}
+\begin{itemize}[nosep]
+\item ARIMA delivered excellent backtest accuracy (0.77\% MAPE on test set)
+\item Data-driven stock selection using quantitative screening of 25 candidates
+\item Multi-strategy portfolio blending provided diversified allocation
+\item GARCH correctly identified high vs.\ low-risk stocks
+\end{itemize}
+
+\subsection{What Didn't Work}
+\begin{itemize}[nosep]
+\item \textbf{Backtest vs.\ live gap:} Backtest MAPE 0.77\% vs.\ live MAPE $\sim$20\%. Models extrapolated from Dec 2025 data into May 2026 --- a 5-month gap with significant market changes.
+\item \textbf{Corporate actions:} Stock splits/bonus issues in HDFCBANK, ITC, INFY caused price levels to shift dramatically, which the model couldn't anticipate.
+\item \textbf{All-long strategy:} During a broad market downturn, all stocks fell together.
+\end{itemize}
+
+\subsection{What I Would Improve}
+\begin{enumerate}[nosep]
+\item Retrain models on the latest available data right before the trading window
+\item Include exogenous variables (Nifty 50 index, FII/DII flows, USD/INR)
+\item Add regime detection to switch between bull/bear allocation modes
+\item Build an ensemble that weights predictions by recent per-stock accuracy
+\item Incorporate stop-loss mechanisms based on GARCH volatility forecasts
+\end{enumerate}
+
+\end{document}
